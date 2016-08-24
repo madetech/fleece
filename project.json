@@ -1,0 +1,4 @@
+{
+  "name": "fleece",
+  "description": "Run arbitrary binaries on AWS Lambda"
+}

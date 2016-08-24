@@ -1,0 +1,4 @@
+*.DS_Store
+functions/run/*
+!functions/run/main.go
+!functions/run/function.json
