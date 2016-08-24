@@ -25,7 +25,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, cmdIn.Args)
 
 		var m commandOutput
-		test := exec.Command(fmt.Sprintf("./%s", cmdIn.Cmd))
+		test := exec.Command(fmt.Sprintf("./%s", cmdIn.Cmd), cmdIn.Args)
 		output, _ := test.Output()
 		m.Output = string(output)
 
