@@ -9,6 +9,7 @@ import (
 )
 
 type commandOutput struct {
+  Cmd string `json:"cmd"`
 	Output string `json:"output"`
 }
 
@@ -28,6 +29,7 @@ func main() {
 		test := exec.Command(fmt.Sprintf("./%s", cmdIn.Cmd), cmdIn.Args)
 		output, _ := test.Output()
 		m.Output = string(output)
+    m.Cmd = cmdIn.Cmd
 
 		return m, nil
 	})
