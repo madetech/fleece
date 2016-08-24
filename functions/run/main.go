@@ -29,7 +29,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, cmdIn.Args)
 
 		var m commandOutput
-		test := exec.Command(fmt.Sprintf("./%s", cmdIn.Cmd), cmdIn.Args)
+		test := exec.Command(cmdIn.Cmd, cmdIn.Args)
 		output, err := test.Output()
 		m.Output = string(output)
 
