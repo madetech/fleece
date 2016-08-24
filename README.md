@@ -1,5 +1,7 @@
 # fleece
 
+![Fleece](http://www.abc.net.au/news/image/6747340-4x3-940x705.jpg)
+
 Run arbitrary binaries on AWS Lambda
 
 ## Dependencies
