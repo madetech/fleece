@@ -11,6 +11,9 @@ import (
 type commandOutput struct {
   Cmd string `json:"cmd"`
 	Output string `json:"output"`
+  Error string `json:"error"`
+  // exit code integer
+  // error message
 }
 
 type commandInput struct {
@@ -27,8 +30,13 @@ func main() {
 
 		var m commandOutput
 		test := exec.Command(fmt.Sprintf("./%s", cmdIn.Cmd), cmdIn.Args)
-		output, _ := test.Output()
+		output, err := test.Output()
 		m.Output = string(output)
+
+    if (err != nil) {
+      m.Error = err.Error()
+    }
+
     m.Cmd = cmdIn.Cmd
 
 		return m, nil
